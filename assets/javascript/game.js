@@ -1,13 +1,25 @@
+
+
 //1. list of words for Hangman game. 
 var randomWordsss = ["backpack", "dinosaur", "octopus", "hamburger", "snowman", "popsicle", "inchworm", "skateboard", "caterpillar", "helicopter", "sunglasses", "lollipop", "mountains", "starfish", "feather", "elephant", "videogame", "psychology", "animal"];
 
 //2. random word is chosen from this list 
 var randomWord = randomWordsss[Math.floor(Math.random() * randomWordsss.length)];
 
-//4. a user has 12 guesses to start. Display on the DOM 
+//3.  want a word like "bird" to become "----" (4 hash marks) essentially I want to change every i into "-"
+var emptyArray = [];
+for (var i = 0; i < randomWord.length; i++) {
+    emptyArray[i] = " ___ ";
+}
+
+//4. a user has 12 guesses to start.  
 var userGuesssesRemaining = 12;
+
+//Display to the DOM, a) guessesRemaining b) the emptyArray 
 window.onload = function () {
     document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
+    document.getElementById('whodis').innerHTML = emptyArray.join(" ");
+
     console.log(randomWord);
 }
 
@@ -34,13 +46,10 @@ document.onkeyup = function (event) {
             userGuesssesRemaining--
             //8.4 update the DOM with userGuesses remaining 
             document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
-        } else {
-            return "repeat"
-        }
-
-
+        } 
     } else {
         //8 if the letter does exist then we have correctly chosen a letter 
+        randomWord.indexOf()
         console.log("correct letter!: " + letter);
     }
 

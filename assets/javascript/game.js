@@ -46,11 +46,21 @@ document.onkeyup = function (event) {
             userGuesssesRemaining--
             //8.4 update the DOM with userGuesses remaining 
             document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
+            if (userGuesssesRemaining === 0) {
+                location.reload();
+            }
         } 
     } else {
-        //8 if the letter does exist then we have correctly chosen a letter 
-        randomWord.indexOf()
-        console.log("correct letter!: " + letter);
+        //8 if the letter does exist then we have correctly chosen a letter
+        
+        //go through each index in randomWord and check if the character at index === letter. If it does, update the array and redisplay the array
+        for (var i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] === letter) {
+                emptyArray[i] = letter;
+                document.getElementById('whodis').innerHTML = emptyArray.join(" ");
+            }
+        }
+        // if () 
     }
 
 }

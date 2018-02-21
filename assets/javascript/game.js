@@ -1,4 +1,5 @@
 
+var wins = 0;
 
 //1. list of words for Hangman game. 
 var randomWordsss = ["backpack", "dinosaur", "octopus", "hamburger", "snowman", "popsicle", "inchworm", "skateboard", "caterpillar", "helicopter", "sunglasses", "lollipop", "mountains", "starfish", "feather", "elephant", "videogame", "psychology", "animal"];
@@ -12,6 +13,7 @@ for (var i = 0; i < randomWord.length; i++) {
     emptyArray[i] = " ___ ";
 }
 
+
 //4. a user has 12 guesses to start.  
 var userGuesssesRemaining = 12;
 
@@ -19,9 +21,11 @@ var userGuesssesRemaining = 12;
 window.onload = function () {
     document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
     document.getElementById('whodis').innerHTML = emptyArray.join(" ");
+    document.getElementById('wins').innerHTML = wins;
 
     console.log(randomWord);
 }
+
 
 //5. need to store my guesses to check for repeats later 
 var string = "";
@@ -49,10 +53,10 @@ document.onkeyup = function (event) {
             if (userGuesssesRemaining === 0) {
                 location.reload();
             }
-        } 
+        }
     } else {
         //8 if the letter does exist then we have correctly chosen a letter
-        
+
         //go through each index in randomWord and check if the character at index === letter. If it does, update the array and redisplay the array
         for (var i = 0; i < randomWord.length; i++) {
             if (randomWord[i] === letter) {
@@ -60,7 +64,12 @@ document.onkeyup = function (event) {
                 document.getElementById('whodis').innerHTML = emptyArray.join(" ");
             }
         }
-        // if () 
+        if (emptyArray.join("") === randomWord) {
+            ++wins;
+            document.getElementById('wins').innerHTML = wins;
+            //need some type of trigger to begin game again
+            location.reload();
+        }
     }
 
 }

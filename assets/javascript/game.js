@@ -2,7 +2,7 @@
 var wins = 0;
 
 //1. list of words for Hangman game. 
-var randomWordsss = ["backpack", "dinosaur", "octopus", "hamburger", "snowman", "popsicle", "inchworm", "skateboard", "caterpillar", "helicopter", "sunglasses", "lollipop", "mountains", "starfish", "feather", "elephant", "videogame", "psychology", "animal"];
+var randomWordsss = ["pizza", "spaghetti", "apricots", "hamburger", "cabbage", "mushrooms", "lobster", "bananas", "sausages", "risotto", "tomato", "lollipop", "sushi", "yams", "avocado", "blackberries", "tamale", "macaroni", "croissant"];
 
 //2. random word is chosen from this list 
 var randomWord = randomWordsss[Math.floor(Math.random() * randomWordsss.length)];

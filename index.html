@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,29 +12,39 @@
     <script src="assets/javascript/game.js"></script>
     <title>Hangman</title>
 </head>
-<body>
-    <header><h1>Hangman Game</h1></header> 
 
+<body background="assets/images/food.jpg">
+    <header>
+        <h1>Hangman Game</h1>
+    </header>
+    <br>
+    <section>
 
-    <section> 
-        <h3>Press any letter to get started!</h3>
-
-        <h4>Wins:</h4>
-        <p id="wins"> </p>
-
-        <h4>What word am I thinking of?</h4>
-        <p id='whodis'> </p>
-
-        <h4>Number of Guesses Remaining:</h4>
-        <p id='guessesRemaining'> </p>
-
-        <h4>Letters Already Guessed:</h4>
-        <p id='already'> </p>
     </section>
 
-    <aside id="box-one"> </aside>
+    <div id="box-one">
+        <div id="holder">
+            <h3>Press any letter to get started!</h3>
+            <br>
+            <h4>Wins:</h4>
+            <p id="wins"> </p>
+            <br>
+            <h4></h4>Mm what food(s) am I thinking of?</h4>
+            <p id='whodis'> </p>
+            <br>
+            <h4>Number of Guesses Remaining:</h4>
+            <p id='guessesRemaining'> </p>
+            <br>
+            <h4>Letters Already Guessed:</h4>
+            <p id='already'> </p>
+        </div>
+        <div id="box-two">
+            <img src="assets/images/fruitbasket.png" alt="Smiley face" height="250" width="250">
+        </div>
+    </div>
 
 
- 
+
 </body>
+
 </html>

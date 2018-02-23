@@ -1,15 +1,20 @@
-body {
+ body {
     font-family: 'Slabo 27px', serif;
     font-family: 'Anton', sans-serif;
     font-family: 'Rubik', sans-serif;
     font-family: 'Comfortaa', cursive;
-}
+    margin-top: 30px;
+    margin-left: 30px;
+} 
 
-h1 {
+ h1 {
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    font-size: 50px;
 }
 
-section {
+/* section {
     background-color: pink;
     border: 2px solid black;
     margin-top: 100px;
@@ -19,18 +24,43 @@ section {
     text-align: center;
     float: right;
     margin-right: 275px;
-}
+}  */
 
 #box-one {
     background-color: pink;
     border: 2px solid black;
-    width: 375px;
+    border-style: dashed;
+    width: 600px;
     height: 650px;
-    margin-left: 250px;
-    margin-top: 120px;
+    margin-left: 400px;
+    margin: 0 auto;
+    
 }
 
+#box-two {
+    background-color: rgb(86, 247, 239);
+    width: 275px;
+    height: 650px;
+    border-right: 2px solid black;
+    border-style: dashed;
+}
+
+#holder {
+    float: right;
+    margin-top: 50px;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 20px;
+}
+
+img {
+    margin-left: 12px;
+}
+
+
+
+/* 
 #container {
     background-color: red;
-}
+}  */
 

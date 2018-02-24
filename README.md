@@ -1,6 +1,6 @@
 # Hangman-Game
 
-##inside
+## inside
 
 My first developed game, using vanilla JavaScript! Classic Hangman game!  
 

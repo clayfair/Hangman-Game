@@ -1,29 +1,38 @@
-
+//store wins
 var wins = 0;
 
 //1. list of words for Hangman game. 
 var randomWordsss = ["pizza", "spaghetti", "apricots", "hamburger", "cabbage", "mushrooms", "lobster", "bananas", "sausages", "risotto", "tomato", "lollipop", "sushi", "yams", "avocado", "blackberries", "tamale", "macaroni", "croissant"];
 
 //2. random word is chosen from this list 
-var randomWord = randomWordsss[Math.floor(Math.random() * randomWordsss.length)];
+var randomWord = "";
 
 //3.  want a word like "bird" to become "----" (4 hash marks) essentially I want to change every i into "-"
 var emptyArray = [];
-for (var i = 0; i < randomWord.length; i++) {
-    emptyArray[i] = " ___ ";
-}
-
 
 //4. a user has 12 guesses to start.  
 var userGuesssesRemaining = 12;
 
-//Display to the DOM, a) guessesRemaining b) the emptyArray 
-window.onload = function () {
+function startGame() {
+    emptyArray = [];
+    userGuesssesRemaining = 12;
+    randomWord = randomWordsss[Math.floor(Math.random() * randomWordsss.length)];
+    for (var i = 0; i < randomWord.length; i++) {
+        emptyArray[i] = " _ ";
+    }
     document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
     document.getElementById('whodis').innerHTML = emptyArray.join(" ");
     document.getElementById('wins').innerHTML = wins;
-
+    document.getElementById('already').innerHTML = "";
     console.log(randomWord);
+}
+
+
+
+//Display to the DOM, a) guessesRemaining b) the emptyArray 
+window.onload = function () {
+    // document.getElementById('wins').innerHTML = sessionStorage.getItem(trackMyWins);
+    startGame();
 }
 
 
@@ -51,12 +60,11 @@ document.onkeyup = function (event) {
             //8.4 update the DOM with userGuesses remaining 
             document.getElementById('guessesRemaining').innerHTML = userGuesssesRemaining;
             if (userGuesssesRemaining === 0) {
-                location.reload();
+                startGame();
             }
         }
     } else {
         //8 if the letter does exist then we have correctly chosen a letter
-
         //go through each index in randomWord and check if the character at index === letter. If it does, update the array and redisplay the array
         for (var i = 0; i < randomWord.length; i++) {
             if (randomWord[i] === letter) {
@@ -65,10 +73,11 @@ document.onkeyup = function (event) {
             }
         }
         if (emptyArray.join("") === randomWord) {
-            ++wins;
+            wins++;
+            // sessionStorage.setItem(trackMyWins, wins);
             document.getElementById('wins').innerHTML = wins;
-            //need some type of trigger to begin game again
-            location.reload();
+             //need some type of trigger to begin game again
+            startGame();
         }
     }
 
